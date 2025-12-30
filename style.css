@@ -30,48 +30,189 @@ nav,
   display: flex;
 }
 
-nav{
-    justify-content: space-around;/*Mỗi item có khoảng trống ở hai bên (trái + phải)*/
-    align-content: center;
-    height: 17vh; /*17* độ cao của màn hình*/
-    margin-top: 20px;
+nav {
+  justify-content: space-around; /*Mỗi item có khoảng trống ở hai bên (trái + phải)*/
+  align-content: center;
+  height: 17vh; /*17* độ cao của màn hình*/
+  margin-top: 20px;
 }
-.nav-links{
-    gap: 2rem; /*khoảng cách giũa các item*/
-    list-style: none;
-    font-size: 1.5rem; /*1,5 nhân với font của html*/
+.nav-links {
+  gap: 2rem; /*khoảng cách giũa các item*/
+  list-style: none;
+  font-size: 1.5rem; /*1,5 nhân với font của html*/
 }
-a{
-    color: black;
-    text-decoration: none;
-    text-decoration-color:white ;
+a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
 }
-a:hover{
-    color: grey;
-    text-decoration: underline;
-    text-underline-offset: 1rem; /*khoangr giữa đường gạch chân và chữ*/
-    text-decoration-color:rgb(181,181,181) ;
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem; /*khoangr giữa đường gạch chân và chữ*/
+  text-decoration-color: rgb(181, 181, 181);
 }
-.logo{
-    font-size: 2rem;;
+.logo {
+  font-size: 2rem;
 }
-.logo:hover{
-    cursor: default;
+.logo:hover {
+  cursor: default;
 }
 
 /*Hamburger menu*/
-#hamburger-nav{
-    display: none;
+#hamburger-nav {
+  display: none; /*ẩn hamburger menu trên desktop, không chiếm diện tích, hoàn toàn không hiển thị*/
 }
-.hamburger-menu{
-    position: relative;
-    display: inline-block;
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
 }
-.hamburger-icon{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 24px;
-    width: 30px;
-    cursor: pointer;
+.hamburger-icon {
+  display: flex; /*sử dụng flexbox để sắp xếp các thanh trong hamburger menu theo chiều ngang*/
+  flex-direction: column; /*sắp xếp các thanh theo cột dọc*/
+  justify-content: space-between; /*khoảng cách giữa các thanh, trên dưới*/
+  /*align-items: center; căn giữa các thanh theo chiều ngang*/
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
 }
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3s ease-in-out; /*chậm nhanh chậm*/
+}
+.menu-links {
+  position: absolute; /*định vị tuyệt đối so với phần tử cha gần nhất có position khác static*/
+  top: 25%; /*xuống dưới hamburger icon*/
+  right: 0;
+  background-color: white;
+  width: fit-content; /*kích thước vừa với nội dung bên trong*/
+  max-height: 0; /*Cho chiều cao tối đa của khung chứa bằng 0*/
+  overflow: hidden; /*Ẩn tất cả nội dung bị tràn ra ngoài khung (chính là ẩn các thẻ li)*/
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links a {
+  display: block; /*mỗi thẻ a chiếm một dòng*/
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.menu-links li {
+  list-style: none;
+}
+.menu-links.open {
+  max-height: 300px;
+}
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+  /*xoay thanh đầu tiên 45 độ và dịch chuyển nó sang phải và xuống dưới*/
+}
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0; /*ẩn thanh giữa*/
+}
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+  /*xoay thanh cuối cùng -45 độ và dịch chuyển nó sang phải và lên trên*/
+}
+.hamburger-icon span:first-child {
+  transform: none;
+  opacity: 1;
+}
+
+/*Sections*/
+section {
+  padding-top: 4vh; /*khoảng cách từ trên xuống nội dung bên trong section*/
+  height: 96vh; /*đảm bảo là section chiếm toàn bộ màn hình*/
+  margin: 0 10rem;
+  box-sizing: border-box; /*đảm bảo padding và border không làm tăng kích thước của phần tử, không vượt height*/
+  min-height: fit-content; /*màn hình quá ngắn thì vẫn hiện đầy đủ nội dụng*/
+}
+.section-container {
+  display: flex;
+}
+
+/*Profile Section*/
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+.section__text {
+  align-self: center; /*nó sẽ vượt quyền align-items của section-container*/
+  text-align: center;
+}
+.section__text p {
+  font-weight: 600;
+}
+.section__text_p1 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+#social-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+/*Icons*/
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/*Buttons*/
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+}
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+.btn-color-1:hover {
+  background-color: rgb(0, 0, 0);
+}
+.btn-color-2 {
+  background-color: none;
+}
+.btn-color-2:hover {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
