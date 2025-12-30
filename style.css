@@ -138,6 +138,7 @@ section {
 
 /*Profile Section*/
 #profile {
+  position: relative;
   display: flex;
   justify-content: center;
   gap: 5rem;
@@ -158,6 +159,9 @@ section {
   font-weight: 600;
 }
 .section__text_p1 {
+  text-align: center;
+}
+.section__text_p2 {
   text-align: center;
   font-size: 1.75rem;
   margin-bottom: 1rem;
@@ -183,7 +187,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .btn {
   font-weight: 600;
@@ -215,4 +219,96 @@ section {
 .btn-color-2:hover {
   border: rgb(255, 255, 255) 0.1rem solid;
 }
+.arrow1 {
+  position: absolute;
+  right: 5rem;
+  bottom: 2.5rem;
+}
 
+/*About Section*/
+#about {
+  position: relative;
+}
+.about-containers {
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+}
+.about-containers,
+.about-details-container {
+  display: flex;
+}
+.about-pic {
+  border-radius: 2rem;
+}
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  /*
+  Rộng tối đa để lấp đầy thẻ cha.
+  Các hộp sẽ bằng chằn chặn nhau.
+  Không để lại khoảng trắng thừa.*/
+  background-color: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+.section__pic-container {
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+/*EXPERIENCE SECTION*/
+#experience {
+  position: relative;
+}
+
+.experience-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.article-container {
+  display: flex;
+  text-align: initial; /*căn trái mặc định, trên center và căn phải*/
+  flex-wrap: wrap; /*nếu nội dung lớn hơn container thì nó sẽ xuống hàng*/
+  flex-direction: row;
+  gap: 2.5rem; /*tạo khoảng chống giữa boxes*/
+  justify-content: space-around;
+}
+article {
+  display: flex;
+  min-width: 10rem; /* Độ rộng tối thiểu */
+  width: max-content; /* Giãn ra theo nội dung nếu cần */
+  max-width: 12rem; /* Nhưng không được quá rộng */
+  justify-content: left;
+  gap: 0.5rem;
+}
+article .icon {
+  cursor: default;
+}
+article h3 {
+  hyphens: auto; /* Tự động thêm dấu gạch nối khi ngắt từ (tùy trình duyệt) */
+}
