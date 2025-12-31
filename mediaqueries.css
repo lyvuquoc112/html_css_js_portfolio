@@ -1,3 +1,17 @@
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   /*màn hình nhỏ hơn 1200px*/
   #desktop-nav {
@@ -5,5 +19,106 @@
   }
   #hamburger-nav {
     display: flex; /*hiển thị hamburger menu*/
+  }
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+  #profile,
+  .section-container {
+    display: block;
+  }
+  .arrow {
+    display: none;
+  }
+  section,
+  .section-container {
+    height: fit-content;
+  }
+  section {
+    margin: 0 5%;
+  }
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+  .about-containers {
+    margin-top: 0;
+  }
+  .about-containers1 {
+    align-items: flex-start; /* Quan trọng: Ngăn các card bị kéo giãn chiều cao */
+    flex-wrap: wrap; /* Cho phép rớt dòng khi không đủ chỗ */
+  }
+}
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+    height: 40vh;
+  }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+  article {
+    font-size: 1rem;
+  }
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .project-img {
+    height: auto; /* Cho phép ảnh tự co giãn */
+    max-height: 200px; /* Giới hạn để dành chỗ cho nút */
+  }
+
+  .details-container {
+    height: auto; /* Quan trọng: Để card tự dài ra theo nội dung */
+    padding: 1rem;
+  }
+  .btn-container {
+    gap: 0.5rem;
+  }
+  .btn {
+    width: 100%; /* Cho 2 nút xếp chồng lên nhau và rộng bằng card */
+    /* Hoặc */
+    /* width: 6rem; Giảm độ rộng nút để vừa hàng ngang */
+  }
+  .contact-info-container {
+    margin: 0;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .section__pic-container {
+    width: auto;
+    height: 46vw;
+    justify-content: center;
+  }
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .text-container {
+    text-align: justify;
   }
 }
